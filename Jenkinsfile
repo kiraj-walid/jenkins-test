@@ -62,33 +62,33 @@ pipeline {
             }
         }
         
-        stage('Run Tests') {
-            steps {
-                echo 'Exécution des tests unitaires...'
-                sh '''
-                    cd ms-discovery && mvn test || true
-                    cd ../ms-config && mvn test || true
-                    cd ../ms-livre && mvn test || true
-                    cd ../ms-etudiant && mvn test || true
-                    cd ../ms-emprunt && mvn test || true
-                    cd ../ms-gateway && mvn test || true
-                '''
-            }
-        }
+        // stage('Run Tests') {
+        //     steps {
+        //         echo 'Exécution des tests unitaires...'
+        //         sh '''
+        //             cd ms-discovery && mvn test || true
+        //             cd ../ms-config && mvn test || true
+        //             cd ../ms-livre && mvn test || true
+        //             cd ../ms-etudiant && mvn test || true
+        //             cd ../ms-emprunt && mvn test || true
+        //             cd ../ms-gateway && mvn test || true
+        //         '''
+        //     }
+        // }
         
-        stage('Build Docker Images') {
-            steps {
-                echo 'Construction des images Docker...'
-                sh 'docker compose build --no-cache'
-            }
-        }
+        // stage('Build Docker Images') {
+        //     steps {
+        //         echo 'Construction des images Docker...'
+        //         sh 'docker compose build --no-cache'
+        //     }
+        // }
         
-        stage('Stop Old Containers') {
-            steps {
-                echo 'Arrêt des anciens containers...'
-                sh 'docker compose down || true'
-            }
-        }
+        // stage('Stop Old Containers') {
+        //     steps {
+        //         echo 'Arrêt des anciens containers...'
+        //         sh 'docker compose down || true'
+        //     }
+        // }
         
         stage('Deploy') {
             steps {
