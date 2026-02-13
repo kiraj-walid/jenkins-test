@@ -26,7 +26,7 @@ pipeline {
         stage('Build Docker Images') {
             steps {
                 echo 'Construction des images Docker...'
-                sh 'docker-compose build'
+                sh 'docker compose build'
             }
         }
         
@@ -34,8 +34,8 @@ pipeline {
             steps {
                 echo 'Déploiement de l\'application...'
                 sh '''
-                    docker-compose down
-                    docker-compose up -d
+                    docker compose down
+                    docker compose up -d
                 '''
             }
         }
