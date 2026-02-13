@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Code récupéré depuis GitHub'
-                git branch: 'main', url: 'https://github.com/VOTRE-USERNAME/VOTRE-REPO.git'
+                git branch: 'main', url: 'https://github.com/kiraj-walid/jenkins-test.git'
             }
         }
         
